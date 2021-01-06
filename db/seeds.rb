@@ -9,7 +9,7 @@ puts "🗑 Deleting everything"
 
 Book.destroy_all
 
-10.times do
+15.times do
   book = Book.create!(
     title: Faker::Book.title,
     author: Faker::Book.author,
@@ -18,8 +18,9 @@ Book.destroy_all
     image_url: Faker::Avatar.image
   )
 
-  15.times do
+  5.times do
     Review.create!(
+      username: Faker::Superhero.name,
       content: Faker::GreekPhilosophers.quote,
       likes: Faker::Number.between(from: 1, to: 10),
       book: book 
